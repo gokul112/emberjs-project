@@ -1,0 +1,21 @@
+<div class="recipe-overview" {{on "click" this.toggleExpand}}>
+
+    <h3>
+        <span {{on "click" this.toggleFavorite}}>
+            {{#if this.isFavorite}}
+                <span class="favourite star">★</span>
+                {{else}}
+                    <span class="star">☆</span>
+            {{/if}}
+        </span>
+        {{@title}}
+
+        {{#if this.isExpanded}}
+           <p class="recipe-detail">{{@description}}</p> 
+           <LinkTo @route="recipes/details" @model="{{@id}}">View Details</LinkTo>
+        {{/if}}
+<button class="btn btn-danger" {{on "click" this.deleteRecipe }} >Delete Recipe</button>
+
+    </h3>
+
+</div>
